@@ -146,7 +146,7 @@ module SSHKit
 
     def within(&_block)
       return yield unless options[:in]
-      sprintf("cd #{options[:in]} && %s", yield)
+      sprintf("cd #{options[:in]} ; %s", yield)
     end
 
     def environment_hash
